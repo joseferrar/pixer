@@ -24,14 +24,14 @@ const rows = [
 function BasicTable() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: "auto" }} aria-label="simple table" size="medium">
+      <Table sx={{ minWidth: "auto" }} aria-label="simple table"  size="medium">
         <TableHead>
           <TableRow>
             <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell>
               <Typography fontWeight={600} marginLeft={-10}>
-                Popular Products
+                Recent Withdrawals
               </Typography>
             </TableCell>
             <TableCell></TableCell>
@@ -81,7 +81,7 @@ function BasicTable() {
               </TableCell>
               <TableCell align="right">{row.carbs}</TableCell>
               <TableCell align="right">
-                <EyeIcon width={24} height={24} />
+                <EyeIcon width={24} height={24}/>
               </TableCell>
             </TableRow>
           ))}

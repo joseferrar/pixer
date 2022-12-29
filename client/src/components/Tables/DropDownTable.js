@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Chip from '@mui/material/Chip';
+import Chip from "@mui/material/Chip";
 
 function createData(name, calories, fat, carbs, protein, price) {
   return {
@@ -59,7 +59,12 @@ function Row(props) {
         </TableCell>
         <TableCell align="right">{row.calories}</TableCell>
         <TableCell align="center">{row.fat}</TableCell>
-        <TableCell align="right" style={{color: "rgb(49, 238, 82)", fontWeight: "bold"}}>Processing</TableCell>
+        <TableCell
+          align="right"
+          style={{ color: "rgb(49, 238, 82)", fontWeight: "bold" }}
+        >
+          Processing
+        </TableCell>
         <TableCell align="center"></TableCell>
       </TableRow>
       <TableRow>
@@ -78,7 +83,7 @@ function Row(props) {
                     <TableCell align="right">{row.fat}</TableCell>
                     <TableCell />
                     <TableCell align="right">{row.carbs}</TableCell>
-                    
+
                     <TableCell align="right">{row.protein}</TableCell>
                   </TableRow>
                 </TableBody>
@@ -119,7 +124,7 @@ const rows = [
 
 export default function CollapsibleTable() {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} elevation={1}>
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
@@ -137,16 +142,24 @@ export default function CollapsibleTable() {
           <TableRow style={{ backgroundColor: "#f7f8f9" }}>
             <TableCell />
             <TableCell>
-              <Typography fontWeight={600}>Tracking Number</Typography>
+              <Typography fontWeight={600} fontSize={15}>
+                Tracking Number
+              </Typography>
             </TableCell>
             <TableCell align="right">
-              <Typography fontWeight={600}>Total</Typography>
+              <Typography fontWeight={600} fontSize={15}>
+                Total
+              </Typography>
             </TableCell>
             <TableCell align="right">
-              <Typography fontWeight={600}>Order Date</Typography>
+              <Typography fontWeight={600} fontSize={15}>
+                Order Date
+              </Typography>
             </TableCell>
             <TableCell align="center">
-              <Typography fontWeight={600}>Status</Typography>
+              <Typography fontWeight={600} fontSize={15}>
+                Status
+              </Typography>
             </TableCell>
             <TableCell align="right"></TableCell>
           </TableRow>
