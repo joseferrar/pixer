@@ -9,6 +9,7 @@ function EyeIcon({ width, height }) {
       stroke="currentColor"
       width={width}
       height={height}
+      color="gray"
     >
       <path
         stroke-linecap="round"

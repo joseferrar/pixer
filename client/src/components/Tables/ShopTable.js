@@ -6,8 +6,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Avatar from "@mui/material/Avatar";
 import { Chip, Typography } from "@mui/material";
 import EyeIcon from "../icons/EyeIcon";
+import CheckOutlineIcon from "../icons/CheckOutlineIcon";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -30,11 +32,6 @@ function ShopTable() {
             <TableCell>
               <Typography fontWeight={600} fontSize={15}>
                 Logo
-              </Typography>
-            </TableCell>
-            <TableCell align="right">
-              <Typography fontWeight={600} fontSize={15}>
-                Name
               </Typography>
             </TableCell>
             <TableCell align="right">
@@ -76,19 +73,22 @@ function ShopTable() {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                <Avatar
+                  alt="Remy Sharp"
+                  src="https://pixer-admin.vercel.app/_next/image?url=https%3A%2F%2Fpixarlaravel.s3.ap-southeast-1.amazonaws.com%2F1118%2Fconversions%2FScreenshot-2022-11-26-132735-thumbnail.jpg&w=48&q=75"
+                  sx={{ width: 50, height: 50, borderRadius: 1 }}
+                />
               </TableCell>
               <TableCell align="right">{row.calories}</TableCell>
               <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
 
               <TableCell align="right"> test</TableCell>
               <TableCell align="right">20</TableCell>
               <TableCell align="right">
-                {" "}
                 <Chip size="small" label="Active" color="success" />
               </TableCell>
               <TableCell align="right">
+                <CheckOutlineIcon onClick={() => alert("test")} />
                 <EyeIcon width={24} height={24} />
               </TableCell>
             </TableRow>
