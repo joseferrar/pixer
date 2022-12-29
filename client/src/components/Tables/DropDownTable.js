@@ -83,7 +83,6 @@ function Row(props) {
                     <TableCell align="right">{row.fat}</TableCell>
                     <TableCell />
                     <TableCell align="right">{row.carbs}</TableCell>
-
                     <TableCell align="right">{row.protein}</TableCell>
                   </TableRow>
                 </TableBody>
