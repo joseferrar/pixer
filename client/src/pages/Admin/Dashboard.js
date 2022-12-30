@@ -16,7 +16,7 @@ import LargeTable from "../../components/Tables/LargeTable";
 function Dashboard() {
   return (
     <>
-      <Grid container spacing={1} marginTop={8}>
+      <Grid container spacing={1} >
         {adminTotal.map((item, i) => (
           <Grid item xs={4} sm={4} md={3}>
             <AdminCard

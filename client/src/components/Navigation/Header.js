@@ -17,11 +17,13 @@ import MailIcon from "@mui/icons-material/Mail";
 import logo from "../../packages/images/logo.svg";
 import { Avatar, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
 import Sidebar from "./Sidebar";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 300;
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["profile", "Account", "Dashboard", "Logout"];
 
 function Header() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -99,7 +101,13 @@ function Header() {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <MenuItem
+                    key={setting}
+                    onClick={() => {
+                      navigate(setting);
+                      handleCloseUserMenu();
+                    }}
+                  >
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}

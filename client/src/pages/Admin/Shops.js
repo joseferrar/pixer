@@ -11,7 +11,7 @@ import ShopTable from "../../components/Tables/ShopTable";
 function Shops() {
   return (
     <div>
-      <Grid container spacing={3} marginTop={5}>
+      <Grid container spacing={3}>
         <Grid item xs={4} sm={4} md={12}>
           <Paper style={{ padding: 30 }} elevation={1}>
             <Grid container spacing={3}>
