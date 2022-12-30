@@ -1,89 +1,38 @@
 import React from "react";
-import { Column } from "@ant-design/plots";
+import Chart from "chart.js/auto";
+import { Bar } from "react-chartjs-2";
 
-const SalesChart = () => {
-  const data = [
-    {
-      type: "January",
-      sales: 0,
-    },
-    {
-      type: "February",
-      sales: 0,
-    },
-    {
-      type: "March",
-      sales: 0,
-    },
-    {
-      type: "April",
-      sales: 0,
-    },
-    {
-      type: "May",
-      sales: 0,
-    },
-    {
-      type: "June",
-      sales: 1200,
-    },
-    {
-      type: "July",
-      sales: 0,
-    },
-    {
-      type: "August",
-      sales: 0,
-    },
-    {
-      type: "September",
-      sales: 0,
-    },
-    {
-      type: "October",
-      sales: 0,
-    },
-    {
-      type: "November",
-      sales: 200,
-    },
-    {
-      type: "December",
-      sales: 800,
-    },
+const BarChart = () => {
+  const labels = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
-  const config = {
-    data,
-    xField: "type",
-    yField: "sales",
-    color: "rgba(3, 211, 181, 0.85)",
-    label: {
-      // 可手动配置 label 数据标签位置
-      position: "middle",
-      // 'top', 'bottom', 'middle',
-      // 配置样式
-      style: {
-        fill: "#fff",
-        opacity: 0.6,
-        marginTop: 30,
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Sales",
+        backgroundColor: "rgba(3, 211, 181, 0.85)",
+        borderColor: "rgb(255, 99, 132)",
+        data: [0, 10, 5, 2, 20, 30, 45, 55, 33, 21, 11, 27],
       },
-    },
-    xAxis: {
-      label: {
-        autoHide: true,
-        autoRotate: false,
-      },
-    },
-    meta: {
-      type: {
-        alias: "Sales",
-      },
-      sales: {
-        alias: "Sales",
-      },
-    },
+    ],
   };
-  return <Column {...config} label="" />;
+  return (
+    <div>
+      <Bar data={data} options={{ plugins: { legend: { display: false } } }} />
+    </div>
+  );
 };
 
-export default SalesChart;
+export default BarChart;
