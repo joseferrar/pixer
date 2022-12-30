@@ -16,6 +16,9 @@ app.use(express.json());
 //middleware
 app.use(morgan("dev"));
 
+//routes
+app.use(require("./routes/users/auth"));
+
 //mongodb connection url
 mongoose.connect(process.env.MONGODB, {
   useNewUrlParser: true,
