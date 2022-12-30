@@ -17,6 +17,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -28,8 +29,11 @@ import { FormInput } from "../../../components/Inputs/FormInput";
 import { InputLabel } from "../../../components/labals/InputLabel";
 import { GreenLink } from "../../../components/Links";
 import { SucessButton } from "../../../components/Buttons";
+import { AuthAction } from "../../../redux/slices/authSlice";
+import { RegisterApi } from "../../../apis/authApi";
 
 function Register() {
+  const dispatch = useDispatch();
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const formik = useFormik({
     initialValues: {
@@ -50,6 +54,7 @@ function Register() {
     }),
     onSubmit: async (data) => {
       console.log(data);
+      dispatch(RegisterApi(data));
     },
   });
 
@@ -82,7 +87,7 @@ function Register() {
             marginTop={2}
             color={"gray"}
           >
-            Login to admin
+            Register new account
           </Typography>
           <form style={{ marginTop: 13, width: "100%", marginLeft: 18 }}>
             <FormControl>
@@ -109,7 +114,7 @@ function Register() {
                 {formik.touched.email ? formik.errors.email : null}
               </FormHelperText>
             </FormControl>
-            <FormControl required fullWidth  variant="outlined">
+            <FormControl required fullWidth variant="outlined">
               <InputLabel>Password</InputLabel>
               <Paper
                 elevation={0}

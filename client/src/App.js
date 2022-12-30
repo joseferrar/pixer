@@ -1,13 +1,19 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/Navigation/Header";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import RouteFC from "./routes/RouteFC";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 function App() {
   return (
-    <div>
-      <RouteFC />
-    </div>
+    <>
+      <ToastContainer />
+      <Provider store={store}>
+        <RouteFC />
+      </Provider>
+    </>
   );
 }
 

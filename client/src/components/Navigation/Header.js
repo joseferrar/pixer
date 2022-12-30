@@ -20,8 +20,24 @@ import Sidebar from "./Sidebar";
 import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 300;
-const settings = ["profile", "Account", "Dashboard", "Logout"];
 
+const settings = [
+  {
+    id: 1,
+    path: "/",
+    name: "Admin",
+  },
+  {
+    id: 2,
+    path: "/profile",
+    name: "Profile",
+  },
+  {
+    id: 3,
+    path: "/login",
+    name: "Logout",
+  },
+];
 function Header() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -104,11 +120,11 @@ function Header() {
                   <MenuItem
                     key={setting}
                     onClick={() => {
-                      navigate(setting);
+                      navigate(setting.path);
                       handleCloseUserMenu();
                     }}
                   >
-                    <Typography textAlign="center">{setting}</Typography>
+                    <Typography textAlign="center">{setting.name}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
